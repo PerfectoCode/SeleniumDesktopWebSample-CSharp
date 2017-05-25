@@ -1,5 +1,6 @@
 ﻿language: csharp
-solution: PerfectoDesktopWeb.sln
+solution: ./PerfectoDesktopWeb.sln
 install:
   - sudo apt-get install -y gtk-sharp2
-  - nuget restore PerfectoDesktopWeb.sln
+  - nuget restore ./PerfectoDesktopWeb.sln
+  - xbuild ./Fibonacci/Fibonacci.sln
