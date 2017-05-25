@@ -1,6 +1,9 @@
 ﻿language: csharp
+mono: none
+dotnet: 1.0.1
+dist: trusty
 solution: ./PerfectoDesktopWeb.sln
 install:
   - sudo apt-get install -y gtk-sharp2
   - nuget restore ./PerfectoDesktopWeb.sln
-  - xbuild ./Fibonacci/Fibonacci.sln
+  
