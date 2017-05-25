@@ -1,10 +1,6 @@
 ﻿language: csharp
-mono: none
-dotnet: 1.0.1
-dist: trusty
-# solution: ./PerfectoDesktopWeb.sln
-install:
-  - sudo apt-get install -y gtk-sharp2
-  - nuget restore ./PerfectoDesktopWeb.sln
+solution: PerfectoDesktopWeb.sln
+before_script:
+  - nuget restore PerfectoDesktopWeb.sln
 script:
-  - xbuild /p:Configuration=Release ./PerfectoDesktopWeb.sln
+  - xbuild /p:Configuration=Debug PerfectoDesktopWeb.sln
