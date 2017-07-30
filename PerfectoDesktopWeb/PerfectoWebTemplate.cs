@@ -33,8 +33,7 @@ namespace PerfectoWebTemplate
             capabilities.SetCapability("browserName", "Chrome");
             capabilities.SetCapability("browserVersion", "latest");
             capabilities.SetCapability("resolution", "1280x1024");
-            capabilities.SetCapability("user", user);
-            capabilities.SetCapability("password", pass);
+            capabilities.SetCapability("securityToken", token);
 
             var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", host));
             driver = new RemoteWebDriver(url, capabilities);
