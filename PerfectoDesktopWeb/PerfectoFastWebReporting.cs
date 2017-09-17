@@ -14,12 +14,14 @@ using Reportium.model;
 namespace PerfectoWebTemplateReporting
 {
     /// <summary>
-    /// Perfecto Desktop Web Using Selenium WebDriver:
     /// This project demonstrate simply how to open a Desktop Web
     /// machine within your Perfecto Lab in the cloud and running your tests
+    ///
+    /// This project uses Perfecto Turbo Web, for more information regarding Perfecto Turbo Web please visit:
+    /// http://developers.perfectomobile.com/display/PD/Automating+Web-apps+with+Perfecto
     /// </summary>
     [TestClass]
-    public class PerfectoWebTemplateReporting
+    public class PerfectoFastWebReporting
     {
         private RemoteWebDriver driver;
         private ReportiumClient reportiumClient;
@@ -28,8 +30,10 @@ namespace PerfectoWebTemplateReporting
         public void PerfectoOpenConnection()
         {
             var host = Environment.GetEnvironmentVariable("host");
-            var user = Environment.GetEnvironmentVariable("user");
-            var pass = Environment.GetEnvironmentVariable("pass");
+            var token = Environment.GetEnvironmentVariable("token");
+
+            //var user = Environment.GetEnvironmentVariable("user");
+            //var pass = Environment.GetEnvironmentVariable("pass");
 
             // For more capabilities and supported platforms, see http://developers.perfectomobile.com/display/PD/Supported+Platforms
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -40,7 +44,7 @@ namespace PerfectoWebTemplateReporting
             capabilities.SetCapability("resolution", "1280x1024");
             capabilities.SetCapability("securityToken", token);
 
-            var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", host));
+            var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub/fast", host));
             driver = new RemoteWebDriver(url, capabilities);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
 

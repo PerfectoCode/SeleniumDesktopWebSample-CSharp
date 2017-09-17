@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -44,12 +47,12 @@
       <HintPath>..\packages\NuGet.Core.2.8.2\lib\net40-Client\NuGet.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PerfectoLab, Version=10.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PerfectoLab.10.3.0.0\lib\PerfectoLab.dll</HintPath>
+    <Reference Include="PerfectoLab, Version=6.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerfectoLab.6.5.0.0\lib\PerfectoLab.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PerfectoLab.Extended, Version=10.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PerfectoLab.Extended.10.3.0.0\lib\PerfectoLab.Extended.dll</HintPath>
+    <Reference Include="PerfectoLab.Extended, Version=6.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerfectoLab.Extended.6.5.0.0\lib\PerfectoLab.Extended.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ReportiumLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -87,11 +90,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="PerfectoFastWebTemplate.cs" />
-    <Compile Include="PerfectoWebTemplateReporting.cs" />
-    <Compile Include="PerfectoWebTemplate.cs" />
+    <Compile Include="PerfectoFastWeb.cs" />
+    <Compile Include="PerfectoFastWebReporting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WindTunnelUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
