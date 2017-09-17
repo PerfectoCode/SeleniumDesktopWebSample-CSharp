@@ -9,18 +9,18 @@ for your web applications on the cloud.
 ```C#
 ...
 var host = Environment.GetEnvironmentVariable("host");
-var user = Environment.GetEnvironmentVariable("user");
-var pass = Environment.GetEnvironmentVariable("pass");
+var token = Environment.GetEnvironmentVariable("token");
+
+//var user = Environment.GetEnvironmentVariable("user");
+//var pass = Environment.GetEnvironmentVariable("pass");
 ... 
 ```
-Note! you may want to use env variable for your credentials as demonstrated
+Note! You may want to use env variable for your credentials as demonstrated
 
 - Note:exclamation: the project include 4 templates: 
-    - PerfectoFastWebTemplate: template for Perfecto Turbo Web.
-    - PerfectoFastWebTemplateReporting: template for Perfecto Turbo Web + DigitalZoom Reporting.
-    - PerfectoWebTemplate: basic web automation template.
-    - PerfectoWebTemplateReporting: same as the basic template + DigitalZoom Reporting.
-
+    - PerfectoFastWeb: template for Perfecto Turbo Web.
+    - PerfectoFastWebReporting: template for Perfecto Turbo Web + DigitalZoom Reporting.
+    
 - Choose one (or more) of the templates, import into your existing solution or use this solution.
 
 - Run the project from visual studio.
@@ -35,10 +35,9 @@ Note! you may want to use env variable for your credentials as demonstrated
     capabilities.SetCapability("browserName", "Chrome");
     capabilities.SetCapability("browserVersion", "latest");
     capabilities.SetCapability("resolution", "1280x1024");
-    capabilities.SetCapability("user", user);
-    capabilities.SetCapability("password", pass);
+    capabilities.SetCapability("securityToken", token);
 
-    var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub", host));
+    var url = new Uri(string.Format("http://{0}/nexperience/perfectomobile/wd/hub/fast", host));
     driver = new RemoteWebDriver(url, capabilities);
 }
 ```
